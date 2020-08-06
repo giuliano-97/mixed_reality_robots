@@ -34,7 +34,7 @@ source ./devel/setup.bash
 catkin_make
 ``` 
 ## Unity/Hololens setup 
-A video was created to aid the next steps in setting up the environment and running the demos. This video can be found [here](../docs/demo_tutorial.mp4)
+A video was created to aid the next steps in setting up the environment and running the demos. This video can be found [here](docs/demo_tutorial.mp4)
 - You will need a machine with Windows 10 on which you are going to install the Unity game engine. The assets in this repository are guaranteed to be compatible with Unity 2019.3.*.
 - Clone the repository
 - Create a new Unity Project for 3D
