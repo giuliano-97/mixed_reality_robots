@@ -1,0 +1,7 @@
+#Goal definition
+geometry_msgs/Pose targetPose
+---
+#Result definition
+bool pathResult
+---
+#Feedback - no feedback

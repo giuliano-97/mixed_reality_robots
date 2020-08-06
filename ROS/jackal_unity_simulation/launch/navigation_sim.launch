@@ -1,0 +1,12 @@
+<launch>
+
+    <!-- Start rviz -->
+    <include file="$(find jackal_unity_simulation)/launch/description_rviz.launch"/>
+
+    <!-- Start navigation stack -->
+    <include file="$(find jackal_unity_simulation)/launch/navigation.launch"/>
+
+    <!-- Start gmapping -->
+    <include file="$(find jackal_unity_simulation)/launch/gmapping.launch"/>
+
+</launch>

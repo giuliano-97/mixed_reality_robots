@@ -1,0 +1,7 @@
+#Goal definition
+bool confirmation
+---
+#Result definition
+bool confirmationResult
+---
+#Feedback

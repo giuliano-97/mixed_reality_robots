@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>jackal_unity_simulation</name>
+  <version>0.0.0</version>
+  <description>A Unity based simulation which used the jackal robot and ROS#</description>
+
+  <maintainer email="albanesg@student.ethz.ch">Giuliano</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <!-- run time dependencies -->
+  <exec_depend>jackal_description</exec_depend>
+  <exec_depend>move_base</exec_depend>
+  <exec_depend>gmapping</exec_depend>
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+
+  </export>
+</package>

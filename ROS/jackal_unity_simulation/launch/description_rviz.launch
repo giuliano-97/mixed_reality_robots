@@ -1,0 +1,17 @@
+<launch>
+
+<group ns="jackal">
+    <!-- rviz parameters -->
+    <param name="use_gui" value="true"/>
+    <arg name="config" default="simple_visualization" />
+
+    <!-- Load robot description -->
+    <include file="$(find jackal_description)/launch/description.launch">
+        <arg name="config" value="front_laser" />
+    </include>
+
+    <!-- Launch rviz with configuration of choice -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find jackal_unity_simulation)/rviz/$(arg config).rviz" />
+</group>
+
+</launch>

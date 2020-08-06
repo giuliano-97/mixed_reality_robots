@@ -1,0 +1,42 @@
+<launch>
+    <!-- By default, we are not in debug mode -->
+    <arg name="debug" default="false" />
+
+    <!-- Let planning context load the robot description. Within this namespace
+        the description in folder <ws>/robot_descriptions/franka_description with custom
+        inertias and masses is the one that will be found  -->
+    <include file="$(find panda_moveit_config)/launch/planning_context.launch">
+        <arg name="load_robot_description" value="true"/>
+    </include>
+
+    <!-- Broadcast static tf from robot root -->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="virtual_joint_broadcaster_1" args="0 0 0 0 0 0 world panda_link0" />
+
+    <!-- We do not have a robot connected, so publish fake joint states -->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+        <rosparam param="/source_list">[/move_group/fake_controller_joint_states]</rosparam>
+    </node>
+    <node name="joint_state_desired_publisher" pkg="topic_tools" type="relay" args="joint_states joint_states_desired" />
+
+    <!-- Publish tf tree given the joint_states -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+
+    <!-- Run move_group -->
+    <include file="$(find panda_moveit_config)/launch/move_group.launch">
+        <arg name="allow_trajectory_execution" value="true"/>
+        <arg name="fake_execution" value="true"/>
+        <arg name="info" value="true"/>
+        <arg name="debug" value="$(arg debug)"/>
+    </include>
+
+    <!-- Run Rviz -->
+    <node name="rviz_panda_moveit" pkg="rviz" type="rviz" output="screen" args="-d $(find panda_unity_simulation)/rviz/manip.rviz">
+        <rosparam command="load" file="$(find panda_moveit_config)/config/kinematics.yaml"/>
+    </node>
+
+    <!-- Run MoveGroupInterface -->
+    <node pkg="panda_unity_simulation" name="MoveGroupInterface" type="MoveGroupInterface.py" output="screen"/>
+
+    <!-- Run obstacle manager -->
+    <node pkg="panda_unity_simulation" name="ManipObstaclesManager" type="ManipObstaclesManager" output="screen"/>
+</launch>

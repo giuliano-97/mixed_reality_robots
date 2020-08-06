@@ -1,0 +1,12 @@
+# Request
+# An array of bounding boxes to add to the scene
+panda_unity_simulation/BoundingBox[] boundingBoxes
+# An array of meshes from the HL spatial mapping to add to the scene
+panda_unity_simulation/SpatialMappingMesh[] spatialMappingMeshes 
+---
+# Feedback
+string log
+---
+# Result
+string log
+

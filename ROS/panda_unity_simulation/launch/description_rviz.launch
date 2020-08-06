@@ -1,0 +1,16 @@
+<launch>
+    
+    <!-- Create robot description -->
+    <param name="robot_description"
+            command="$(find xacro)/xacro 
+                    $(find franka_description)/robots/panda_arm_hand.urdf.xacro
+                    --inorder" />	
+
+    <!-- Launch robot state publisher -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+    <!-- Launch rviz -->
+    <node name="rviz" pkg="rviz" type="rviz" />
+
+
+</launch>

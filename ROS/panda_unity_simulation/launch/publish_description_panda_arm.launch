@@ -1,0 +1,15 @@
+<launch>
+    <!-- Start file server node -->
+	<include file="$(find file_server)/launch/ros_sharp_communication.launch">
+		<arg name="port" value="9090" />
+	</include>
+
+    <!-- Define robot name -->
+	<param name="robot/name" value="panda_arm_hand" />
+
+    <!-- Create robot description -->
+    <param name="robot_description"
+         command="$(find xacro)/xacro 
+                  $(find franka_description)/robots/panda_arm_hand.urdf.xacro
+                    --inorder" />	
+</launch>
