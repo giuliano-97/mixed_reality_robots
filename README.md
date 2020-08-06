@@ -1,5 +1,11 @@
 # 3D Vision project - Robot simulation in Mixed Reality
 
+This project aims to showcase how mixed reality devices could be used to simplify the interaction between humans and robots using MRTK and ROS.
+
+The instructions below explain how to setup the ROS/Unity environment and try the demos in Holographic Remoting mode on a Microsoft Hololens.
+
+One of the goals for future iterations of this project would be to add support for Android devices, so that anyone with a smartphone and laptop could try it.
+
 ## ROS setup - Ubuntu
 - You will need either a VM with Ubuntu 16.04 or a separate machine with Ubuntu 16.04 to which you can establish a network connection. In the first case, follow the instructions at  https://github.com/siemens/ros-sharp/wiki/User_Inst_UbuntuOnOracleVM to install Ubuntu on Oracle VM VirtualBox.
 - In your Ubuntu machine install ROS Kinetic (follow the instructions at http://wiki.ros.org/kinetic/Installation/Ubuntu)
