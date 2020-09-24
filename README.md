@@ -78,14 +78,6 @@ cd ws_mrrobots && ./devel/setup.bash
 roslaunch jackal_unity_simulation navigation_sim.launch
 ```
 
-### Manipulation in Follow Mode:
-- Fire up a new terminal and run the following commands to start the simulation of
-the Panda manipulator in follow mode:
-```bash
-cd ws_mrrobots && ./devel/setup.bash
-roslaunch panda_unity_simulation follow_object.launch
-```
-
 ## Running the demos - UNITY
 - Start up the Hololens and open the "Holographic Emulation" Application
 - In Unity go to "Window" -> "XR" -> "Holographic Emulation"
