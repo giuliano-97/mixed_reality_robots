@@ -1,4 +1,6 @@
-# 3D Vision project - Robot simulation in Mixed Reality
+# Mixed reality robots
+
+![Manipulation demo](/docs/mr_robots.gif)
 
 This project aims to showcase how mixed reality devices could be used to simplify the interaction between humans and robots using MRTK and ROS.
 
